@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto / Registro - Historias Clínicas</title>
+</head>
+<body>
+  <header>
+    <h1>Contacto y Registro de Paciente</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="acerca.html">Acerca</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="tabla.html">Tabla de Historias</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Formulario de Historia Clínica</h2>
+
+      <form action="procesar_historia.php" method="post">
+        <fieldset>
+          <legend>Datos personales</legend>
+
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" required><br>
+
+          <label for="fecha">Fecha de nacimiento:</label>
+          <input type="date" id="fecha" name="fecha" required><br>
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email"><br>
+
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono">
+        </fieldset>
+
+        <fieldset>
+          <legend>Información clínica</legend>
+
+          <label for="numero">Número de historia clínica:</label>
+          <input type="number" id="numero" name="numero" required><br>
+
+          <label>Género:</label>
+          <input type="radio" id="m" name="genero" value="m"><label for="m">Masculino</label>
+          <input type="radio" id="f" name="genero" value="f"><label for="f">Femenino</label><br>
+
+          <label for="alergias">Alergias:</label>
+          <select id="alergias" name="alergias">
+            <option value="ninguna">Ninguna</option>
+            <option value="medicamentos">Medicamentos</option>
+            <option value="alimentos">Alimentos</option>
+          </select><br>
+
+          <label for="observaciones">Observaciones:</label>
+          <textarea id="observaciones" name="observaciones" rows="6"></textarea><br>
+
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">Confirmo que la información es verídica</label>
+        </fieldset>
+
+        <button type="submit">Registrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Formulario de registro clínico</p>
+  </footer>
+</body>
+</html>
