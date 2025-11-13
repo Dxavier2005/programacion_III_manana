@@ -17,15 +17,14 @@ export class BasicsController {
     postFunction(@Body() bodyPost: any) {
         return this.basicsService.postFunction(bodyPost);
     }
-}
 
-   @Put(':id')
-   Update (@Body() bodypost: object) {
+    @Put(':id')
+    update(@Body() bodypost: object) {
         return this.basicsService.putFunction(bodypost);
+    }
 
-
-
-   @Delete(':id')
-   delete(@Param('id') id: string) {
-       return this.basicsService.deleteFunction(id);
-   }    
+    @Delete(':id')
+    delete(@Param('id') id: string) {
+        return this.basicsService.deleteFunction(id);
+    }
+}    

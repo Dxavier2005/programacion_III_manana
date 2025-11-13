@@ -2,43 +2,57 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-
 export class BasicsService {
-    postFunction(bodyPost: any) {
-      throw new Error('Method not implemented.');
+    postFunction(bodyPost: any): object {
+        return { 
+            service: 'blog-backend',
+            controller: '/basics',
+            function: 'Post Example',
+            bodyRecibido: bodyPost
+        };
     }
     
     getMyfirstGet(): object {
-        return { service: 'blog-backend',
-                  controller: '/basics',
-                  function:'Get Example'
-         };
+        return { 
+            service: 'blog-backend',
+            controller: '/basics',
+            function: 'Get Example'
+        };
     }
 
     getConParametros(parametro: string): object {
-        return { service: 'blog-backend',
-                  controller: '/basics',
-                  function:'Get con Parametros',
-                  parametroRecibido: parametro
-         };
+        return { 
+            service: 'blog-backend',
+            controller: '/basics',
+            function: 'Get con Parametros',
+            parametroRecibido: parametro
+        };
     }
 
     postExample(bodyPost: any): object {
-        return { service: 'blog-backend',
-                  controller: '/basics',
-                  function:'Post Example',
-                  bodyRecibido: bodyPost
-         };
+        return { 
+            service: 'blog-backend',
+            controller: '/basics',
+            function: 'Post Example',
+            bodyRecibido: bodyPost
+        };
+    }
+
+    putFunction(bodypost: object): object {
+        return { 
+            service: 'blog-backend',
+            controller: '/basics',
+            function: 'Put Example',
+            bodyRecibido: bodypost
+        };
+    }
+
+    deleteFunction(id: string): object {
+        return { 
+            service: 'blog-backend',
+            controller: '/basics',
+            function: 'Delete Example',
+            idRecibido: id
+        };
     }
 }
-
-
-
-    putFunction(bodypost: object, parametro: string): object {
-        return { service: 'blog-backend',
-                  controller: '/basics',
-                  function:'Put Example',
-                  bodyRecibido: bodypost,
-                  parametroRecibido: parametro
-         };
-    }
