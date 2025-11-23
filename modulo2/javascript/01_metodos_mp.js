@@ -1,1 +1,1 @@
-console.log("Hola desde el sistema de Historias Clínicas");
+console.log("Registro desde archivo externo del sistema clínico");

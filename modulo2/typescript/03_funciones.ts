@@ -1,33 +1,28 @@
-export {};
-
-//Funciones basica en typescript
-
-function saludar(nombre: string): string {
-    return `Hola, ${nombre}!`;
+// funcion basica
+function saludarUnico(nombre: string): string {
+    return `Hola ${nombre}`;
 }
 
-console.log(saludar('Francisco'));
-
-//funcion flecha
-const sumar = (a: number, b: number): number => {
+console.log(saludarUnico('Francisco'));
+// funcion flecha
+const sumarNumeros = (a: number, b: number): number => {
     return a + b;
 }
+console.log(sumarNumeros(5,5));
 
-console.log(sumar(5, 5));
 
-function saludarDeNuevo(): void {
-    console.log('Hola');
-    console.log('Bienvenido a typescript');
+function saludarDeNuevo2(): void {
+    console.log(`Hola`);
+    console.log(`Bienvenido a Typescript`);
 }
-saludarDeNuevo();
+saludarDeNuevo2();
 
-function calcularAreaCirculo(radio: number): number {
+
+function obtenerAreaCirculo(radio: number): number{
     return Math.PI * radio * radio;
 }
-
-function calcularAreaCirculoVoid(radio: number): void {
+function imprimirAreaCirculo(radio: number): void{
     console.log(Math.PI * radio * radio);
 }
-
-console.log(calcularAreaCirculo(5));
-calcularAreaCirculoVoid(7);
+console.log(obtenerAreaCirculo(5));
+imprimirAreaCirculo(7);

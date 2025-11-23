@@ -1,45 +1,44 @@
-console.log("Variables en Historias Clínicas");
+console.log("Variables");
 
+// Texto relacionado a historia clínica
+saludos = "Registro de Historia Clínica";
+console.log("variable saludo", saludos);
+console.log("Tipo de variable: ", typeof (saludos));
 
-saludoPaciente = "Hola, registrando historia clínica";
-console.log("variable saludoPaciente:", saludoPaciente);
-console.log("Tipo de variable:", typeof(saludoPaciente));
+// Número: edad del paciente
+numero = 45;
+console.log("variable numero", numero);
+console.log("Tipo de variable: ", typeof (numero));
 
+// Booleano: paciente activo
+booleana = true;
+console.log("variable booleana", booleana);
+console.log("Tipo de variable: ", typeof (booleana));
 
-edadPaciente = 35;
-console.log("variable edadPaciente:", edadPaciente);
-console.log("Tipo de variable:", typeof(edadPaciente));
+// Valor indefinido: diagnóstico aún no registrado
+indefinida = undefined;
+console.log("variable indefinida", indefinida);
+console.log("Tipo de variable: ", typeof (indefinida));
 
+// Valor nulo: tratamiento aún no asignado
+nula = null;
+console.log("variable nula", nula);
+console.log("Tipo de variable: ", typeof (nula));
 
-tieneAlergia = true;
-console.log("variable tieneAlergia:", tieneAlergia);
-console.log("Tipo de variable:", typeof(tieneAlergia));
+// BigInt: número de expediente muy grande
+bigenter = 8765675675785324567567567567n;
+console.log("variable bigenter", bigenter);
+console.log("Tipo de variable: ", typeof (bigenter));
 
+// Objeto: información de un paciente
+personas = {
+    nombre: "Paciente Juan Pérez",
+    edad: 52
+}
+console.log("variable objeto", personas);
+console.log("Tipo de variable: ", typeof (personas));
 
-diagnostico = undefined;
-console.log("variable diagnostico:", diagnostico);
-console.log("Tipo de variable:", typeof(diagnostico));
-
-
-medicamento = null;
-console.log("variable medicamento:", medicamento);
-console.log("Tipo de variable:", typeof(medicamento));
-
-
-historialID = 8765675675785324567n;
-console.log("variable historialID:", historialID);
-console.log("Tipo de variable:", typeof(historialID));
-
-
-paciente = {
-    nombre: "Dario",
-    edad: 20,
-    diagnostico: "Gripe leve"
-};
-console.log("variable paciente:", paciente);
-console.log("Tipo de variable:", typeof(paciente));
-
-
-numerosPacientes = [101, 102, 103, 104, 105];
-console.log("variable numerosPacientes:", numerosPacientes);
-console.log("Tipo de variable:", typeof(numerosPacientes));
+// Array: niveles de presión arterial registrados
+numeros = [120, 125, 118, 130, 115, 122];
+console.log("variable array", numeros);
+console.log("Tipo de variable: ", typeof (numeros));

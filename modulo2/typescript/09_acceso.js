@@ -1,32 +1,49 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Libros = void 0;
-var Libros = /** @class */ (function () {
-    function Libros(titulo, cota) {
-        this.idGeneric = '9918289829882';
+exports.HistoriaClinica = exports.Libro = void 0;
+var Libro = /** @class */ (function () {
+    function Libro(titulo) {
+        this.idGeneric = '991828982988';
         this.titulo = titulo;
-        this.cota = cota;
+        this.generarCota();
     }
-    Libros.prototype.generarCota = function () {
-        this.cota = parseInt(new Date().getTime().toString() + this.idGeneric);
+    Libro.prototype.generarCota = function () {
+        this.cota = (new Date()).toDateString();
     };
-    Libros.prototype.getCota = function () {
+    Libro.prototype.getCota = function () {
         return this.cota;
     };
-    Libros.prototype.getAtributes = function () {
+    Libro.prototype.getAtributes = function () {
         return {
             titulo: this.titulo,
-            cota: this.cota
+            cota: this.cota,
+            id: this.idGeneric
         };
     };
-    Libros.prototype.mostrarInformacion = function () {
-        console.log("T\u00EDtulo: ".concat(this.titulo));
-        console.log("Cota: ".concat(this.cota));
-    };
-    return Libros;
+    return Libro;
 }());
-exports.Libros = Libros;
-// Ejemplo de uso
-var libro1 = new Libros('Programación en TypeScript', '');
-console.log(libro1.generarCota());
-libro1.mostrarInformacion();
+exports.Libro = Libro;
+var HistoriaClinica = /** @class */ (function () {
+    function HistoriaClinica(nombrePaciente) {
+        this._nombrePaciente = nombrePaciente;
+        this._fechaRegistro = new Date();
+    }
+    Object.defineProperty(HistoriaClinica.prototype, "nombrePaciente", {
+        get: function () {
+            return this._nombrePaciente;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    HistoriaClinica.prototype.getFechaRegistro = function () {
+        return this._fechaRegistro.toLocaleDateString();
+    };
+    HistoriaClinica.prototype.getAtributes = function () {
+        return {
+            nombrePaciente: this._nombrePaciente,
+            fechaRegistro: this._fechaRegistro
+        };
+    };
+    return HistoriaClinica;
+}());
+exports.HistoriaClinica = HistoriaClinica;

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Manipulación de Estilos Clínicos</title>
+  <style>
+    #cuadro {
+      width: 100px;
+      height: 100px;
+      background-color: #58a6ff;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Indicador Clínico Interactivo</h1>
+
+  <div 
+    id="cuadro" 
+    style="width: 100px; height: 100px; background-color: #58a6ff;">
+  </div>
+
+  <div style="margin-top:20px;">
+    <button onclick="cambiarColor()">🎨 Cambiar Indicador</button>
+    <button onclick="aumentarTamano()">⬆️ Aumentar Tamaño del Indicador</button>
+    <button onclick="reiniciar()">🔄 Restablecer Indicador</button>
+  </div>
+
+  <script src="09_estilos.js"></script>
+</body>
+</html>

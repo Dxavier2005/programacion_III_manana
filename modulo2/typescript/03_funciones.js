@@ -1,18 +1,16 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-//Funciones basica en typescript
+// funcion basica
 function saludar(nombre) {
-    return "Hola, ".concat(nombre, "!");
+    return "Hola ".concat(nombre);
 }
 console.log(saludar('Francisco'));
-//funcion flecha
+// funcion flecha
 var sumar = function (a, b) {
     return a + b;
 };
 console.log(sumar(5, 5));
 function saludarDeNuevo() {
-    console.log('Hola');
-    console.log('Bienvenido a typescript');
+    console.log("Hola");
+    console.log("Bienvenido a Typescript");
 }
 saludarDeNuevo();
 function calcularAreaCirculo(radio) {

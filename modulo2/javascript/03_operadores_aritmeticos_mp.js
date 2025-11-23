@@ -1,47 +1,54 @@
-console.log("Operadores Aritméticos en Historias Clínicas");
+console.log("Operadores Aritméticos - Cálculos Clínicos");
+
+// Valores clínicos (ejemplo: presión sistólica y diastólica)
+numero1 = 120;
+numero2 = 80;
+
+console.log("Suma (ej. presión total estimada): ");
+suma = numero1 + numero2;
+console.log("Resultado ", suma);
+
+console.log("Resta (diferencia entre valores clínicos): ");
+resta = numero1 - numero2;
+console.log("Resultado ", resta);
+
+console.log("Multiplicación (proyección médica): ");
+multiplicacion = numero1 * numero2;
+console.log("Resultado ", multiplicacion);
+
+console.log("División (relación entre parámetros): ");
+division = numero1 / numero2;
+console.log("Resultado ", division);
+
+console.log("Módulo (residuo clínico): ");
+modulo = numero1 % numero2;
+console.log("Resultado ", modulo);
+
+console.log("Potencia (cálculo elevado): ");
+potencia = numero1 ** numero2;
+console.log("Resultado ", potencia);
 
 
-edadPaciente1 = 30;
-edadPaciente2 = 45;
+// Comparaciones clínicas
+console.log("Operadores comparación");
+console.log("Igualdad debilidad ==: ", "5" == 5);
+console.log("Igualdad estricta ===: ", "5" === 5);
+console.log("Desigualdad debilidad !=: ", "5" != 5);
+console.log("Desigualdad estricta !==: ", "5" !== 5);
+console.log("Mayor que >: ", "130" > 120); // ejemplo: presión alta
+console.log("Menor que <: ", "98" < 100); // ejemplo: saturación baja
+console.log("Mayor o igual que >=: ", "36" >= 36); // temperatura mínima
+console.log("Menor o igual que <=: ", "90" <= 100); // pulso aceptable
 
 
-console.log("Suma de edades: ");
-sumaEdades = edadPaciente1 + edadPaciente2;
-console.log("Resultado:", sumaEdades);
+// Operadores lógicos en decisiones clínicas
+console.log("Operadores Lógicos");
 
-console.log("Resta de edades: ");
-restaEdades = edadPaciente1 - edadPaciente2;
-console.log("Resultado:", restaEdades);
+// Ejemplo: parámetros dentro de rangos saludables
+console.log("y AND &&", 98 <= 100 && 36 >= 35);
 
-console.log("Multiplicación de edades: ");
-multiplicacionEdades = edadPaciente1 * edadPaciente2;
-console.log("Resultado:", multiplicacionEdades);
+// Ejemplo: si cualquiera de los valores es aceptable
+console.log("o OR ||", 98 <= 100 || 110 >= 90);
 
-console.log("División de edades: ");
-divisionEdades = edadPaciente1 / edadPaciente2;
-console.log("Resultado:", divisionEdades);
-
-console.log("Módulo de edades: ");
-moduloEdades = edadPaciente1 % edadPaciente2;
-console.log("Resultado:", moduloEdades);
-
-console.log("Potencia de edades: ");
-potenciaEdades = edadPaciente1 ** 2;
-console.log("Resultado:", potenciaEdades);
-
-
-console.log("Comparaciones:");
-console.log("Edad igual a 30 ==:", 30 == edadPaciente1);
-console.log("Edad estrictamente igual a 30 ===:", 30 === edadPaciente1);
-console.log("Edad distinta !=:", 30 != edadPaciente2);
-console.log("Edad estrictamente distinta !==:", 30 !== edadPaciente2);
-console.log("Mayor que >:", edadPaciente2 > edadPaciente1);
-console.log("Menor que <:", edadPaciente1 < edadPaciente2);
-console.log("Mayor o igual >=:", edadPaciente2 >= edadPaciente1);
-console.log("Menor o igual <=:", edadPaciente1 <= edadPaciente2);
-
-
-console.log("Operadores lógicos:");
-console.log("AND &&:", edadPaciente1 <= 30 && edadPaciente2 >= 40);
-console.log("OR ||:", edadPaciente1 <= 30 || edadPaciente2 >= 50);
-console.log("Negación !:", !(edadPaciente1 == 30));
+// Negación: condición no cumplida
+console.log("Negación !", !(120 == 120));

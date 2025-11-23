@@ -1,42 +1,49 @@
-export class Libros {
+export class Libro {
     public titulo: string;
-    public cota: any;
-    protected idGeneric: string = '9918289829882';
-
-
-    constructor(titulo: string, cota: any) {
-        this.titulo = titulo;
-        this.cota = cota;
+    private cota: any;
+    protected idGeneric: string='991828982988';
+    constructor( 
+        titulo: string
+    ){
+        this.titulo=titulo;
+        this.generarCota()
     }
-
-
-    generarCota(): void {
-        this.cota = parseInt(new Date().getTime().toString() + this.idGeneric);
+    generarCota(): void{
+        this.cota = (new Date()).toDateString();
     }
-    getCota(): any {
+    getCota():any {
         return this.cota;
     }
-    getAtributes(): any {
+    getAtributes():any {
         return {
             titulo: this.titulo,
-            cota: this.cota
-        };
-    }
-    mostrarInformacion(): void {
-        console.log(`Título: ${this.titulo}`);
-        console.log(`Cota: ${this.cota}`);
+            cota: this.cota,
+            id: this.idGeneric
+        }
     }
 }
 
+export class HistoriaClinica {
+    private _nombrePaciente: string;
+    private _fechaRegistro: Date;
 
-// Ejemplo de uso
-const libro1 = new Libros('Programación en TypeScript', '');
-console.log(libro1.generarCota());
-libro1.mostrarInformacion();
+    constructor(nombrePaciente: string) {
+        this._nombrePaciente = nombrePaciente;
+        this._fechaRegistro = new Date();
+    }
 
+    get nombrePaciente(): string {
+        return this._nombrePaciente;
+    }
 
+    getFechaRegistro(): string {
+        return this._fechaRegistro.toLocaleDateString();
+    }
 
-
-
-
-
+    getAtributes(): object {
+        return {
+            nombrePaciente: this._nombrePaciente,
+            fechaRegistro: this._fechaRegistro
+        };
+    }
+}
