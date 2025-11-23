@@ -1,0 +1,26 @@
+.texto_paciente {
+    color: #004d99;
+    background-color: #e0f7fa; 
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    line-height: 1.7;
+    text-decoration: underline;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    white-space: nowrap;
+}
+
+.texto_diagnostico {
+    color: #b71c1c; 
+    background-color: #fff3cd; 
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1;
+    text-decoration: line-through;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    white-space: nowrap;
+}
