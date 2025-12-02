@@ -12,6 +12,8 @@ import { Pagination } from 'nestjs-typeorm-paginate';
 import { User } from './user.entity';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
+import type { Express } from 'express';
+type MulterFile = Express.Multer.File;
 
 @Controller('users')
 export class UsersController {
@@ -43,7 +45,7 @@ export class UsersController {
       searchField,
       sortBy,
       sortOrder,
-    } as any);
+    });
     return new SuccessResponseDto('List Users successfully', users);
   }
   @Get(':id')
@@ -66,7 +68,6 @@ export class UsersController {
     if (!user) throw new NotFoundException('User not found');
     return new SuccessResponseDto('User deleted successfully', user);
   }
-
   @Put(':id/profile')
   @UseInterceptors(FileInterceptor('profile', {
     storage: diskStorage({
@@ -80,10 +81,9 @@ export class UsersController {
       cb(null, true);
     }
   }))
-  async uploadProfile(@Param('id') id: string, @UploadedFile() file: any) {
+  async uploadProfile(@Param('id') id: string, @UploadedFile() file: MulterFile) {
     if (!file) throw new BadRequestException('Profile image is required');
-    await this.usersService.updateProfile(id, file.filename);
-    const user = await this.usersService.findOne(id);
+    const user = await this.usersService.updateProfile(id, file.filename);
     if (!user) throw new NotFoundException('User not found');
     return new SuccessResponseDto('Profile image updated', user);
   }
