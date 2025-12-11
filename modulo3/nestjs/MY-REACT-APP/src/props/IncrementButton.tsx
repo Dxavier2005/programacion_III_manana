@@ -1,5 +1,3 @@
-import type { MouseEventHandler } from "react";
-
-export default function IncrementButton(props: { onIncrement: MouseEventHandler<HTMLButtonElement> | undefined; }) {
+export default function IncrementButton(props:any) {
   return <button onClick={props.onIncrement}>Sumar 1</button>;
 }

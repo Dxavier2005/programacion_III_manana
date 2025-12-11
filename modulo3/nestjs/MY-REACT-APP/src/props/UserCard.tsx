@@ -1,17 +1,13 @@
-export default function UserCard() {
-  const user = {
-    name: "Xavier",
-    lastname: "Simbaña",
-    age: 24,
-    address: "Carapungo",
-    phone: "0987654321"
-  };
+interface User {
+  name: string;
+  lastName: string;
+  age: number;
+  address: string;
+  phone: string;
+}
 
-  return (
-    <div>
-      {user.name} {user.lastname} - {user.age} años <br />
-      Dirección: {user.address} <br />
-      Teléfono: {user.phone}
-    </div>
-  );
+export default function UserCard({ user }: { user: User }) {
+  return <div>{user.name} {user.lastName} - {user.age} años, 
+      Dirección: {user.address}, 
+      Teléfono: {user.phone}</div>;
 }

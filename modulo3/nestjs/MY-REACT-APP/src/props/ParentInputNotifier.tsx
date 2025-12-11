@@ -1,3 +1,13 @@
-export default function InputNotifier(props: { onChangeText: (arg0: string) => void; }) {
-  return <input type="text" onChange={e => props.onChangeText(e.target.value)} />;
+import { useState } from "react";
+import InputNotifier from "./InputNotifier";
+
+export default function ParentInputNotifier() {
+  const [text, setText] = useState("");
+
+  return (
+    <>
+      <InputNotifier onChangeText={setText} />
+      <p>Texto: {text}</p>
+    </>
+  );
 }

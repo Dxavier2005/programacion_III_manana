@@ -1,11 +1,11 @@
 
 import { useState } from 'react';
 
-export default function LoginForm(props: { onLogin: (arg0: { email: string; password: string; }) => void; }) {
+export default function LoginForm(props:any) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     props.onLogin({ email, password });
   };
@@ -18,9 +18,3 @@ export default function LoginForm(props: { onLogin: (arg0: { email: string; pass
     </form>
   );
 }
-
-
-
-
-
-
