@@ -1,5 +1,6 @@
 // Uso mediante components
 
+
 /*
 import ButtonCounter from './components/ButtonCounter';
 import ColorBox from './components/ColorBox';
@@ -117,7 +118,7 @@ function App() {
   );
 }
 export default App;
-*/
+
 
 import ParentAreaTrianguloForm from "./props/ParentAriaTrianguloForm";
 
@@ -125,6 +126,40 @@ function App() {
   return (
     <>
       <ParentAreaTrianguloForm/>
+    </>
+  );
+}
+export default App;/**  
+
+import HoverFont from "./usestate/HoverFont";
+
+function App() {
+  return (
+    <>
+      <HoverFont/>
+    </>
+  );
+}
+export default App; /*/
+
+
+import AccessWithLimit from "./usestate/AccessWithLimit";
+import LoginWhitlimit from "./usestate/LoginWhitlimit"; 
+import DocumentTitleChanger from "./usestate/DocumentTitleChanger";
+import PostLikes from "./usestate/PostLikes";
+import CheckboxSummary from "./usestate/CheckboxSummary";
+import LanguageSwitcher from "./usestate/LanguageSwitcher";
+import MultiSwitch from "./usestate/MultiSwitch";
+function App() {
+  return (
+    <>
+      <AccessWithLimit/>
+      <LoginWhitlimit/>
+      <DocumentTitleChanger/>
+      <PostLikes/>
+      <CheckboxSummary/>
+      <LanguageSwitcher/>
+      <MultiSwitch/>
     </>
   );
 }
