@@ -12,8 +12,6 @@ import { Pagination } from 'nestjs-typeorm-paginate';
 import { User } from './user.entity';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-import type { Express } from 'express';
-type MulterFile = Express.Multer.File;
 
 @Controller('users')
 export class UsersController {
@@ -68,23 +66,29 @@ export class UsersController {
     if (!user) throw new NotFoundException('User not found');
     return new SuccessResponseDto('User deleted successfully', user);
   }
+
   @Put(':id/profile')
   @UseInterceptors(FileInterceptor('profile', {
-    storage: diskStorage({
-      destination: './public/profile',
-      filename: (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`)
-    }),
-    fileFilter: (req, file, cb) => {
-      if (!file.mimetype.match(/\/(jpg|jpeg|png)$/)) {
-        return cb(new BadRequestException('Only JPG or PNG files are allowed'), false);
-      }
-      cb(null, true);
+  storage: diskStorage({
+    destination: './public/profile',
+    filename: (req, file, cb) => {
+      const uniqueName = `${Date.now()}-${file.originalname}`;
+      cb(null, uniqueName);
     }
-  }))
-  async uploadProfile(@Param('id') id: string, @UploadedFile() file: MulterFile) {
-    if (!file) throw new BadRequestException('Profile image is required');
-    const user = await this.usersService.updateProfile(id, file.filename);
-    if (!user) throw new NotFoundException('User not found');
-    return new SuccessResponseDto('Profile image updated', user);
+  }),
+  fileFilter: (req, file, cb) => {
+    if (!file.mimetype.match(/\/(jpg|jpeg|png)$/)) {
+      return cb(new BadRequestException('Only JPG or PNG files are allowed'), false);
+    }
+    cb(null, true);
   }
+  }))
+  async uploadProfile(  @Param('id') id: string, @UploadedFile() file: Express.Multer.File,) {
+  if (!file) throw new BadRequestException('Profile image is required');
+  const user = await this.usersService.updateProfile(id, file.filename);
+  if (!user) throw new NotFoundException('User not found');
+  return new SuccessResponseDto('Profile image updated', user);
+}
+
+  
 }

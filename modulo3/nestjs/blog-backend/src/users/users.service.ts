@@ -113,16 +113,17 @@ export class UsersService {
     }
   }
 
-  async updateProfile(id: string, filename: string): Promise<User | null> {
-    try {
-      const user = await this.findOne(id);
-      if (!user) return null;
+  async updateProfile(id: string, profile: string): Promise<User | null> {
+  try {
+    const user = await this.userRepository.findOne({ where: { id: id } });
+    if (!user) return null;
 
-      user.profile = filename;
-      return await this.userRepository.save(user);
-    } catch (err) {
-      console.error('Error updating user profile image:', err);
-      return null;
-    }
+    user.profile = profile;
+    return await this.userRepository.save(user);
+  } catch (err) {
+    console.error('Error updating user profile image:', err);
+    return null;
   }
+}
+
 }

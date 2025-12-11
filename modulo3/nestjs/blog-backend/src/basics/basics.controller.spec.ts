@@ -1,48 +1,18 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { BasicsService } from './basics.service';
+import { Test, TestingModule } from '@nestjs/testing';
+import { BasicsController } from './basics.controller';
 
+describe('BasicsController', () => {
+  let controller: BasicsController;
 
-@Controller('basics')
-export class BasicsController {
-    constructor(private readonly basicsService: BasicsService) { }
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      controllers: [BasicsController],
+    }).compile();
 
-    @Get()
-    getMyFirstGet(): object {
-        return this.basicsService.getMyFirstGet();
-    }
+    controller = module.get<BasicsController>(BasicsController);
+  });
 
-    @Get(':parametro')
-    getConParametros(@Param('parametro') parametro: string) {
-        return this.basicsService.getConParametros(parametro);
-    }
-
-    @Post()
-    create(@Body() bodyPost: object) {
-        return this.basicsService.postFunction(bodyPost);
-    }
-
-    @Put(':id')
-        update(@Body() bodyPost: object,
-        @Param('id') id: string
-    ) {
-        return this.basicsService.putFunction(bodyPost, id);
-    }
-    
-    @Delete(':id/:nombre/:apellido')
-    delete(@Param('id') id: string) {
-        return this.basicsService.deleteFunction(id);
-    }
-
-    @Post('calculo-area-triangulo')
-    calculoTriangulo(@Body() bodyPost: object) {
-        return this.basicsService.calculoTriangulo(bodyPost);
-    }
-
-    @Get('calculo-area-rectangulo/:ancho/:alto')
-    areaRectangulo(
-        @Param('ancho') ancho: number,
-        @Param('alto') alto: number,
-    ) {
-        return this.basicsService.areaRectangulo(ancho, alto);
-    }
-}
+  it('should be defined', () => {
+    expect(controller).toBeDefined();
+  });
+});
