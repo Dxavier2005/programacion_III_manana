@@ -142,7 +142,7 @@ function App() {
 }
 export default App; /*/
 
-
+/*
 import AccessWithLimit from "./usestate/AccessWithLimit";
 import LoginWhitlimit from "./usestate/LoginWhitlimit"; 
 import DocumentTitleChanger from "./usestate/DocumentTitleChanger";
@@ -150,6 +150,8 @@ import PostLikes from "./usestate/PostLikes";
 import CheckboxSummary from "./usestate/CheckboxSummary";
 import LanguageSwitcher from "./usestate/LanguageSwitcher";
 import MultiSwitch from "./usestate/MultiSwitch";
+import DynamicColor from "./usestate/DynamicColor";
+import ClickHistory from "./usestate/ClickHistory";
 function App() {
   return (
     <>
@@ -160,6 +162,45 @@ function App() {
       <CheckboxSummary/>
       <LanguageSwitcher/>
       <MultiSwitch/>
+      <DynamicColor/>
+      <ClickHistory/>
+    </>
+  );
+}
+export default App; */
+
+
+/*
+import Clock from "./useEffect/logEffect";
+import DynamicTitle from "./useEffect/DynamicTitle";
+import FetchUser from "./useEffect/FetchUser";
+import LogEffect from "./useEffect/logEffect";
+import PersistCounter from "./useEffect/PersistCounter";
+import SafeFetch from "./useEffect/SafeFetch";
+
+function App() {
+  return (
+    <>
+      <Clock/>
+      <DynamicTitle/>
+      <FetchUser/>
+      <LogEffect/>
+      <PersistCounter/>
+      <SafeFetch/>
+    </>
+  );
+}
+export default App;
+*/
+
+
+
+
+
+function App() {
+  return (
+    <>
+      <
     </>
   );
 }
