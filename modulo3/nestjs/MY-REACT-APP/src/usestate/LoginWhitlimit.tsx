@@ -5,7 +5,7 @@ export default function AccessWithLimit() {
   const [attempts, setAttempts] = useState(0);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const emailSaved = 'ariel@gmail.com';
+  const emailSaved = 'dario@gmail.com';
   const passwordSaved = '12345';
 
   const handleAccess = () => {

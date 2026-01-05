@@ -1,207 +1,78 @@
-// Uso mediante components
-
-
 /*
-import ButtonCounter from './components/ButtonCounter';
-import ColorBox from './components/ColorBox';
-import ConditionalText from './components/ConditionalText';
-import EmojiList from './components/EmojiList';
-import HelloWorld from './components/HelloWorld';
-import PromedioForm from './components/PromedioForm';
-import ShowDate from './components/ShowDate';
-import SimpleForm from './components/SimpleForm';
-import SumaForm from './components/SumaForm';
-import TextInput from './components/TextInput';
-import ToggleMessage from './components/ToggleMessage';
-import WelcomeUser from './components/WelcomeUser'; 
+import "./App.css";
+import LoginWhitlimit from "./usestate/LoginWhitlimit";
+import AreaTriangulo from "./usestate/AreaTriangulo";
+import CalculoSalario from "./props/CalculoSalario";
+import UseIdHook from "./useId/useidHook";
+
 
 function App() {
   return (
-    <>
-      <HelloWorld />
-      <WelcomeUser />
-      <ButtonCounter />
-      <TextInput />
-      <ToggleMessage />
-      < ShowDate/>
-      < ColorBox/>
-      < ConditionalText/>
-      < EmojiList/>
-      < SimpleForm/>
-      < SumaForm/>
-      < PromedioForm/>
-    </>
+    <div className="App">
+      <h1>Demo useState</h1>
+
+      <LoginWhitlimit />
+
+      <section>
+        <h2>Área de un triángulo</h2>
+        <AreaTriangulo />
+      </section>
+
+      <section>
+        <h2>Salario semanal</h2>
+        <CalculoSalario />
+      </section>
+
+      <section>
+        <h2>ID único</h2>
+        <UseIdHook />
+      </section>
+    </div>
   );
 }
 
-export default App;
-*/
-
-//Uso mediante props
-
-/*import Greeting from './props/Greeting';
-import UserCard from './props/UserCard';
-
-function App() {
-const userData = { name: "Carlos",lastName:"Paucar",
-   age: 30, address:"Armenia", phone:"0646548" };
-
-  return (
-    <>
-      <Greeting name="Francisco" />
-      <Greeting name="Ana" />
-      <UserCard user={userData} />
-    </>
-  );
-}
-*/
-
-/*import ParentButtonOne from "./props/ParentButtonOne";
-
-function App() {
-  return (
-    <>
-      <ParentButtonOne/>
-    </>
-  );
-}
-export default App;
-*/
-
-/*
-import ParentIncrementButton from "./props/ParentIncrementButton";
-
-function App() {
-  return (
-    <>
-      <ParentIncrementButton/>
-    </>
-  );
-}
-export default App;
-*/
-
-/*
-import ParentInputNotifier from "./props/ParentInputNotifier";
-
-function App() {
-  return (
-    <>
-      <ParentInputNotifier/>
-    </>
-  );
-}
-export default App;
-*/
-
-/*
-import ParentUserList from "./props/ParentUserList";
-
-function App() {
-  return (
-    <>
-      <ParentUserList/>
-    </>
-  );
-}
-export default App;
-*/
-
-/*
-import ParentLoginForm from "./props/ParentLoginForm";
-
-function App() {
-  return (
-    <>
-      <ParentLoginForm/>
-    </>
-  );
-}
-export default App;
-
-
-import ParentAreaTrianguloForm from "./props/ParentAriaTrianguloForm";
-
-function App() {
-  return (
-    <>
-      <ParentAreaTrianguloForm/>
-    </>
-  );
-}
-export default App;/**  
-
-import HoverFont from "./usestate/HoverFont";
-
-function App() {
-  return (
-    <>
-      <HoverFont/>
-    </>
-  );
-}
-export default App; /*/
-
-/*
-import AccessWithLimit from "./usestate/AccessWithLimit";
-import LoginWhitlimit from "./usestate/LoginWhitlimit"; 
-import DocumentTitleChanger from "./usestate/DocumentTitleChanger";
-import PostLikes from "./usestate/PostLikes";
-import CheckboxSummary from "./usestate/CheckboxSummary";
-import LanguageSwitcher from "./usestate/LanguageSwitcher";
-import MultiSwitch from "./usestate/MultiSwitch";
-import DynamicColor from "./usestate/DynamicColor";
-import ClickHistory from "./usestate/ClickHistory";
-function App() {
-  return (
-    <>
-      <AccessWithLimit/>
-      <LoginWhitlimit/>
-      <DocumentTitleChanger/>
-      <PostLikes/>
-      <CheckboxSummary/>
-      <LanguageSwitcher/>
-      <MultiSwitch/>
-      <DynamicColor/>
-      <ClickHistory/>
-    </>
-  );
-}
 export default App; */
 
 
-/*
-import Clock from "./useEffect/logEffect";
-import DynamicTitle from "./useEffect/DynamicTitle";
-import FetchUser from "./useEffect/FetchUser";
-import LogEffect from "./useEffect/logEffect";
-import PersistCounter from "./useEffect/PersistCounter";
-import SafeFetch from "./useEffect/SafeFetch";
+import UseIdHook from "./useId/useidHook";
+import LoginCampos from "./useId/LoginCampos";
+import MayorDeTres from "./useId/MayorDeTres";
+import { BuscadorUseTransition } from "./useTransition/buscadorUseTransition";
+import { TabsUseTransition } from "./useTransition/tabUseTransition";
+import { GaleriaDiferida } from "./useTransition/galeriaDiferida";
 
 function App() {
   return (
-    <>
-      <Clock/>
-      <DynamicTitle/>
-      <FetchUser/>
-      <LogEffect/>
-      <PersistCounter/>
-      <SafeFetch/>
-    </>
+    <div className="App">
+
+      <section>
+        <h2>ID único</h2>
+        <UseIdHook />
+      </section>
+      <section>
+        <h2>Login Campos</h2>
+        <LoginCampos />
+      </section>
+      <section>
+        <h2>Mayor de tres numeros</h2>
+        <MayorDeTres />
+      </section>
+    
+      <section>
+        <h2>Buscador UseTransition</h2>
+        <BuscadorUseTransition />
+      </section>
+      <section>
+        <h2>Tabs UseTransition</h2>
+        <TabsUseTransition />
+      </section>
+      <section>
+        <h2>Galeria Diferida</h2>
+        <GaleriaDiferida />
+      </section>
+    </div>
+    
   );
 }
-export default App;
-*/
 
-
-
-
-
-function App() {
-  return (
-    <>
-      <
-    </>
-  );
-}
-export default App;
+export default App; 

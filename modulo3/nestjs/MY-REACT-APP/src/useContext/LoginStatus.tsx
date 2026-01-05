@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { LoginContext } from './LoginContext';
 
 export default function LoginStatus() {
