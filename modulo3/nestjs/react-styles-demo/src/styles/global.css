@@ -1,0 +1,13 @@
+.globalCard {
+  border: 1px solid #30363d;
+  background: #161b22;
+  border-radius: 12px;
+  padding: 16px;
+  color: #ffffff;
+}
+
+.globalTitle {
+  margin: 0 0 8px 0;
+  color: #58a6ff;
+  font-weight: 800;
+}
