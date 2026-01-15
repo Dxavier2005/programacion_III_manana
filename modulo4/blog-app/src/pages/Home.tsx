@@ -16,7 +16,7 @@ export function Home(): JSX.Element {
 
   useEffect(() => {
     axios
-      .get("https://nestjs-blog-backend-api.desarrollo-software.xyz/posts?page=1&limit=2")
+      .get("https://localhost:3000/posts?page=1&limit=2")
       .then((res) => setPosts(res.data.data.items))
       .catch(() => setPosts([]));
   }, []);

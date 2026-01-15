@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type JSX } from "react";
 import {
   Alert,
   AppBar,
@@ -16,7 +16,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-export default function TestMUI() {
+export default function TestMUI(): JSX.Element {
   const [mode, setMode] = useState<"light" | "dark">("dark");
 
   const theme = useMemo(
